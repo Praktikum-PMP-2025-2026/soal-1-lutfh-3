@@ -82,7 +82,6 @@ int main() {
         while (temp != NULL) {
             printf(" %s", temp->id);
             temp = temp->next;
-            printf("a");
         }
     }
 
@@ -94,7 +93,6 @@ int main() {
             Ttotal += Tsekarang;
             Tsekarang += temp->duration; 
             temp = temp->next;
-            printf("b");
         }
     }
     
