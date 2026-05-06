@@ -72,23 +72,33 @@ int main() {
         enqueue(q, id, duration);
     }
 
+    
     printf("ORDER");
     node *temp = q->front;
-    while (temp != NULL) {
+    if (n == 1) {
         printf(" %s", temp->id);
-        temp = temp->next;
+    }
+    else {
+        while (temp != NULL) {
+            printf(" %s", temp->id);
+            temp = temp->next;
+            printf("a");
+        }
     }
 
     printf("\n");
 
     temp = q->front;
-    while (temp != NULL) {
-        Ttotal += Tsekarang;
-        Tsekarang += temp->duration; 
-        temp = temp->next;
+    if (n != 1) {
+        while (temp != NULL) {
+            Ttotal += Tsekarang;
+            Tsekarang += temp->duration; 
+            temp = temp->next;
+            printf("b");
+        }
     }
     
     printf("WAIT %d\n", Ttotal);
 
-    return 0;
+        return 0;
 }
